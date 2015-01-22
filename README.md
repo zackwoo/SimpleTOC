@@ -5,6 +5,7 @@
 * [指定目录元素](#指定目录元素)
 * [依赖第三方类库](#依赖第三方类库)
 * [实际效果截图](#实际效果截图)
+* [在线DEMO](#在线DEMO)
 
 
 ###如何使用
@@ -38,3 +39,6 @@ $(function(){
 
 ###实际效果截图
 ![效果](http://7tebg3.com1.z0.glb.clouddn.com/sssTOC.png)
+
+###在线DEMO
+详情访问：[http://simpletoc.coding.io/demo](http://simpletoc.coding.io/demo)
