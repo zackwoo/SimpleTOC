@@ -111,7 +111,7 @@
                 $('<div class="sideToolbar" id="sideToolbar"/>')
                     .append($siteCatalog)
                     .append('<a href="javascript:void(0);" id="sideCatalogBtn"></a>')
-                    .appendTo(self.options.context);
+                    .appendTo('body');
 
                 //添加页面扩展extend满足最后一个目录可以滚动到页面顶部
                 var lastItem = items[items.length - 1];
@@ -120,7 +120,7 @@
                 if (extendHeight > 0) {
                     $('<div/>', {
                         height: extendHeight
-                    }).appendTo('body');
+                    }).appendTo(self.options.context);
                 }
             },
             _bindEvent: function () {
@@ -256,12 +256,11 @@
                     var tmp = count - idx - 1 - 6; //不够移动至中间位置时的差值
                     if (tmp < 0) {
                         newDlTop += (Math.abs(tmp) * 25);
+
                     }
-                } else if (newDlTop > dlTop) {
-                    //向下移
-                    if (newDlTop > 0)
-                        newDlTop = 0;
                 }
+                if (newDlTop > 0)
+                        newDlTop = 0;
 
                 if (newDlTop < 0)
                     $('#sideCatalog-up').removeClass('sideCatalog-up-disable').addClass('sideCatalog-up-enable')
