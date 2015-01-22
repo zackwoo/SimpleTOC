@@ -16,13 +16,11 @@
             idSeed = [0, 0, 0];
         // Calling the jQueryUI Widget Factory Method
         $.widget("mcblog.toc", {
-
             //Plugin version
             version: "1.0.0",
 
             // selectors最高支持3级
             options: {
-                context: "body",
                 selectors: "h1, h2, h3"
             },
             _create: function () {
@@ -34,16 +32,18 @@
             },
             _filterSelectors: function () {
                 var self = this;
-                items = $(self.options.context).find(self.options.selectors);
+                items = self.element.find(self.options.selectors);
             },
             _getLevel: function (dom) {
                 //判断元素标签级别
                 var self = this;
                 var selectors = self.options.selectors.replace(/ /g, "").toLocaleLowerCase();
-                var temp = selectors.split(",");
-                var tagName = $(dom).prop("tagName").toLocaleLowerCase();
-
-                return temp.indexOf(tagName);
+                var idx =-1;
+                $.each(selectors.split(","),function(index,item){
+                    if($(dom).is(item))
+                        idx=index;
+                });
+                return idx;
             },
             _generateId: function (dom) {
                 var self = this,
@@ -120,7 +120,7 @@
                 if (extendHeight > 0) {
                     $('<div/>', {
                         height: extendHeight
-                    }).appendTo(self.options.context);
+                    }).appendTo(self.element);
                 }
             },
             _bindEvent: function () {
