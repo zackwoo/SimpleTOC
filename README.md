@@ -41,4 +41,4 @@ $(function(){
 ![效果](http://7tebg3.com1.z0.glb.clouddn.com/sssTOC.png)
 
 ###在线DEMO
-详情访问：[http://simpletoc.coding.io/demo](http://simpletoc.coding.io/demo)
+详情访问：[http://demo.dyouyou.com/](http://demo.dyouyou.com/)
